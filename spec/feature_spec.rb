@@ -15,4 +15,9 @@ describe 'app' do
     expect(most_loyal).to eq("\"travis_kshlerin@wunsch.net\"\n")
   end
 
+  it "should return command not recognised message for unknown question" do
+    question = `ruby app.rb qwret`
+    expect(question).to eq("\"command not recognised\"\n")
+  end
+
 end
