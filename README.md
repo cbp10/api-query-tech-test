@@ -40,7 +40,7 @@ The app is written in Ruby, with Rspec used for testing. I followed the TDD appr
 
 
 ## Structure
-
+```
 command line (user enters question)
 	|
 	|
@@ -54,7 +54,7 @@ command line (user enters question)
    					|
    					|
    					APICall class (makes api call and returns data to Question class)
-
+```
 
 ### Plan
 
