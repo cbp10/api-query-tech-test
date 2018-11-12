@@ -11,7 +11,7 @@ class App
   when "total_spend"
     question.total_spend(argument)
   when "most_loyal"
-    p "most_loyal"
+    question.most_loyal
   else
     p "command not recognised"
   end

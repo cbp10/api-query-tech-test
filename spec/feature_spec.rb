@@ -11,4 +11,9 @@ describe 'app' do
     expect(total_spend).to eq("\"340.36\"\n")
   end
 
+  it "should return most loyal user, who bought most items" do
+    most_loyal = `ruby app.rb most_loyal`
+    expect(most_loyal).to eq("\"travis_kshlerin@wunsch.net\"\n")
+  end
+
 end

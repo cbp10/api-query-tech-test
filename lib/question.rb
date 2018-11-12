@@ -24,6 +24,18 @@ class Question
     p '%.2f' % total
   end
 
+  def most_loyal
+    items_data = @api_call.get_items
+    items_array = get_data_by_key(items_data, 'user_id')
+    items_hash = count_data(items_array)
+    user_id = largest_hash_key(items_hash)
+
+    users_data = @api_call.get_users
+    user_data = select_data_by_value(users_data, 'id', user_id)
+    user = get_data_by_key(user_data, 'email')
+    p user[0]
+  end
+
   private
   
   def get_data_by_key(json_data, key)
