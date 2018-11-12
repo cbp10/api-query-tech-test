@@ -9,7 +9,7 @@ class App
   when "most_sold"
     question.most_sold
   when "total_spend"
-    p "total spend"
+    question.total_spend(argument)
   when "most_loyal"
     p "most_loyal"
   else

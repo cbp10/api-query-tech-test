@@ -7,6 +7,10 @@ class APICall
     get_data('http://driftrock-dev-test.herokuapp.com/purchases')
   end
 
+  def get_users
+    get_data('http://driftrock-dev-test.herokuapp.com/users')
+  end
+  
   private
 
   def get_data(url)

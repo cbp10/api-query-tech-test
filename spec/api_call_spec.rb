@@ -34,5 +34,30 @@ describe APICall do
     expect(subject.get_items).to eq(item_data)
   end
 
+  it("should return users") do
+    stub = stub_request(:any, "http://driftrock-dev-test.herokuapp.com/users").
+    to_return(
+      body:  '{
+        "data": [
+          {
+            "id": "12DF-2324-GA2D-31RT",
+            "first_name": "Drift",
+            "last_name": "Rock",
+            "phone": "0-000-000-0000",
+            "email": "drift.rock@email.com"
+          }
+        ]
+      }')
+
+  user_data = [{"email"=>"drift.rock@email.com",
+        "first_name"=>"Drift",
+        "id"=>"12DF-2324-GA2D-31RT",
+        "last_name"=>"Rock",
+        "phone"=>"0-000-000-0000"}]
+    
+    subject.get_users
+    expect(stub).to have_been_requested.times(1)
+    expect(subject.get_users).to eq(user_data)
+  end
 
 end
