@@ -4,7 +4,7 @@ describe APICall do
   
   let(:subject) { described_class.new }
 
-  it("should return item data") do
+  it("should return items data") do
     stub = stub_request(:get, "http://driftrock-dev-test.herokuapp.com/purchases").
     to_return(
       body:  '{
@@ -34,8 +34,8 @@ describe APICall do
     expect(subject.get_items).to eq(item_data)
   end
 
-  it("should return users") do
-    stub = stub_request(:any, "http://driftrock-dev-test.herokuapp.com/users").
+  it("should return users data") do
+    stub = stub_request(:get, "http://driftrock-dev-test.herokuapp.com/users").
     to_return(
       body:  '{
         "data": [
